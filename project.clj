@@ -3,6 +3,13 @@
   :url "http://example.com/FIXME"
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
+ :resource-paths [
+                   "resources/Syphon/library/jsyphon.jar"
+                   "resources/Syphon/library/libJSyphon.jnilib"
+                   "resources/Syphon/library/Syphon.framework"
+                   "resources/Syphon/library/Syphon.jar"
+                   ]
+
   :dependencies [[org.clojure/clojure "1.8.0"]
                  ;[cider/cider-nrepl "0.13.0"]
                  [overtone "0.10.1"]
