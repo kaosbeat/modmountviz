@@ -9,22 +9,22 @@
                  :rot 0.5
                  :glitch 0
                  :noise 10
-                 :xsize 5
-                 :ysize 5
-                 :zsize 5
+                 :xsize 3
+                 :ysize 3
+                 :zsize 3
                  :depth 10
                  :seed 10
                  :strokeweight 1
-                 :r 128
+                 :r 255
                  :g 255
-                 :b 128
+                 :b 255
                  :alpha 120}) )
 ;(def font modularmountains.core/debugfont)
 (def xlist (atom []))
 (def ylist (atom []))
 (def zlist (atom []))
 
-
+(swap! data assoc :depth 12)
 
 (defn datadebug [x y ts data]
   ;(q/text-font font)
@@ -131,7 +131,7 @@
    (let [
          xoffset      (/ (q/width) 2)
          yoffset      (/ (q/height) 2)
-         zoffset      0
+         zoffset     -500
          seed         (@data :seed)
          noise        env-l
          noiseX       (rand-int (* 5 noise))

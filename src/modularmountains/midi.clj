@@ -126,7 +126,7 @@
 
 (on-event [:midi :control-change]
           (fn [e]
-           ; (println e)
+            ;(println e)
             (let [data1 (:data1 e)
                   data2 (:data2 e)
                   channel (:channel e)]

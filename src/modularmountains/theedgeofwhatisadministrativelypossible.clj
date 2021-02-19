@@ -94,7 +94,7 @@
        b1a   (@c/nano :b1a)
        b1b   (@c/nano :b1b)
 
-       s2    (q/map-range (@c/nano :s2) 0 127 0 3)
+       s2    (q/map-range (@c/nano :s2) 0 127 0 127)
        k2    (q/map-range (@c/nano :k2) 0 127 1 3)
        b2a   (@c/nano :b2a)
        b2b   (@c/nano :b2b)
@@ -127,8 +127,11 @@
 (if (= 1 b4a )
   (swap! data assoc :rot c3)
   )
-(if (> 4 c9)
-  (swap! data assoc :seed (rand-int 100)))
+(if (= 1 b1b)
+  (if (> 4 c9)
+    (swap! data assoc :seed (rand-int 100)))
+
+  (swap! data assoc :seed s2))
                                        ;
                                         ; (q/background 0)
   (q/stroke 255 255 255 (@data :alpha))
@@ -148,7 +151,7 @@
               interradius  10
               amount       @currentamount
               steps        @currentsteps
-              fillrate     0.05
+              fillrate     0.2
                                         ;seed @currentseed
               seed         (@data :seed)
               centeroffset @currentcenteroffset
@@ -158,7 +161,7 @@
 
           (dotimes [n amount]
                                         ;            (q/random-seed n)
-            (q/with-rotation [(q/random 0 6.28) 0 0 1]
+            (q/with-rotation [(q/random 0 6.28) 0 0 0]
               (arcSeq (+ seed  n) (+ steps n)  0.2  fillrate (- (/ centeroffset  2)(q/random centeroffset) ) (- (/ centeroffset  2)(q/random centeroffset) )  (+ baseradius (* n interradius))  (+ baseradius (* n interradius))  )
 
               (arcSeq (+ seed  n) (+ steps n)  0.2  fillrate (- (/ centeroffset  2)(q/random centeroffset) ) (- (/ centeroffset  2)(q/random centeroffset) ) (* (@data :ellipsoid) (+ baseradius (* n interradius)))  (* 3 (+ baseradius (* n interradius))))
