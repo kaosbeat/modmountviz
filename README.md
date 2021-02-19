@@ -1,6 +1,7 @@
 # modularmountains
-
-A Quil sketch designed to ... well, that part is up to you.
+ 
+based on branch moddularmountans, visuals for antenna
+now transforming for live set with bohrbug
 
 ## Usage
 
