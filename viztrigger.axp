@@ -1,0 +1,701 @@
+<patch-1.0 appVersion="1.0.12">
+   <comment type="patch/comment" x="154" y="0" text="modularmountainsVIZ  A192 mapping"/>
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_34" x="1386" y="14">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="16"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_21" x="154" y="28">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="0"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_9" x="238" y="28">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc" uuid="7ca9b2c1b4339022c491a8afd70353c17d765584" name="cc_22" x="322" y="28">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_13" x="476" y="28">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="8"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_5" x="560" y="28">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc" uuid="7ca9b2c1b4339022c491a8afd70353c17d765584" name="cc_14" x="644" y="28">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="8"/>
+      </attribs>
+   </obj>
+   <obj type="disp/chart p" uuid="58f42040a894006a5f73ed8cb8d0bd45481b28cd" name="chart_2" x="1162" y="28">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/chart p" uuid="58f42040a894006a5f73ed8cb8d0bd45481b28cd" name="chart_1" x="1232" y="28">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_23" x="154" y="112">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="1"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_10" x="238" y="112">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc" uuid="7ca9b2c1b4339022c491a8afd70353c17d765584" name="cc_24" x="322" y="112">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_15" x="476" y="112">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="9"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_6" x="560" y="112">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc" uuid="7ca9b2c1b4339022c491a8afd70353c17d765584" name="cc_16" x="644" y="112">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="9"/>
+      </attribs>
+   </obj>
+   <obj type="phi/disp/boolms" uuid="4d2b0662-f881-4953-832a-a286daf5b6a3" name="boolms_1" x="1386" y="112">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/control/env follow" uuid="34b1476e-5a06-4609-8e44-9848cf71f697" name="env_1" x="980" y="140">
+      <params/>
+      <attribs>
+         <combo attributeName="time" selection="5.3ms"/>
+      </attribs>
+   </obj>
+   <obj type="audio/in stereo" uuid="99848ad6d90a8e615e83b2e619cfc806f28e7281" name="in_1" x="854" y="154">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="logic/change" uuid="42071f8cb4cfe1f35956c0bd5a313a57e049bec4" name="change_1" x="1330" y="196">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_35" x="1414" y="196">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="17"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_25" x="154" y="210">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="2"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_11" x="238" y="210">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc" uuid="7ca9b2c1b4339022c491a8afd70353c17d765584" name="cc_26" x="322" y="210">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="2"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_17" x="476" y="210">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="10"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_7" x="560" y="210">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc" uuid="7ca9b2c1b4339022c491a8afd70353c17d765584" name="cc_18" x="644" y="210">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="10"/>
+      </attribs>
+   </obj>
+   <obj type="math/&gt;c" uuid="99f2934d97d62b715a829979ef6c8abef35dcdb2" name="&gt;c_1" x="1232" y="252">
+      <params>
+         <frac32.u.map name="c" value="20.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_17" x="1134" y="280">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_27" x="154" y="308">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="3"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_12" x="238" y="308">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc" uuid="7ca9b2c1b4339022c491a8afd70353c17d765584" name="cc_28" x="322" y="308">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="3"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_19" x="476" y="308">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="11"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_8" x="560" y="308">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc" uuid="7ca9b2c1b4339022c491a8afd70353c17d765584" name="cc_20" x="644" y="308">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="11"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_9" x="154" y="406">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="4"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_13" x="238" y="406">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc" uuid="7ca9b2c1b4339022c491a8afd70353c17d765584" name="cc_10" x="322" y="406">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="4"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_1" x="476" y="406">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="12"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_1" x="560" y="406">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc" uuid="7ca9b2c1b4339022c491a8afd70353c17d765584" name="cc_3" x="644" y="406">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="12"/>
+      </attribs>
+   </obj>
+   <obj type="disp/chart p" uuid="58f42040a894006a5f73ed8cb8d0bd45481b28cd" name="chart_4" x="1134" y="448">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="disp/chart p" uuid="58f42040a894006a5f73ed8cb8d0bd45481b28cd" name="chart_3" x="1204" y="448">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="rbrt/control/env follow" uuid="34b1476e-5a06-4609-8e44-9848cf71f697" name="env_2" x="980" y="476">
+      <params/>
+      <attribs>
+         <combo attributeName="time" selection="5.3ms"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_11" x="154" y="504">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="5"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_14" x="238" y="504">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc" uuid="7ca9b2c1b4339022c491a8afd70353c17d765584" name="cc_12" x="322" y="504">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="5"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_2" x="476" y="504">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="13"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_4" x="560" y="504">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc" uuid="7ca9b2c1b4339022c491a8afd70353c17d765584" name="cc_4" x="644" y="504">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="13"/>
+      </attribs>
+   </obj>
+   <obj type="logic/change" uuid="42071f8cb4cfe1f35956c0bd5a313a57e049bec4" name="change_2" x="1302" y="546">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_37" x="1386" y="546">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="18"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_29" x="154" y="602">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="6"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_15" x="238" y="602">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc" uuid="7ca9b2c1b4339022c491a8afd70353c17d765584" name="cc_30" x="322" y="602">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="6"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_5" x="476" y="602">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="14"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_2" x="560" y="602">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc" uuid="7ca9b2c1b4339022c491a8afd70353c17d765584" name="cc_6" x="644" y="602">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="14"/>
+      </attribs>
+   </obj>
+   <obj type="math/&gt;c" uuid="99f2934d97d62b715a829979ef6c8abef35dcdb2" name="&gt;c_2" x="1204" y="602">
+      <params>
+         <frac32.u.map name="c" value="20.0"/>
+      </params>
+      <attribs/>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_18" x="1106" y="630">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="1"/>
+      </attribs>
+   </obj>
+   <obj type="phi/disp/boolms" uuid="4d2b0662-f881-4953-832a-a286daf5b6a3" name="boolms_2" x="1386" y="644">
+      <params/>
+      <attribs/>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_31" x="154" y="700">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="7"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_16" x="238" y="700">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc" uuid="7ca9b2c1b4339022c491a8afd70353c17d765584" name="cc_32" x="322" y="700">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="7"/>
+      </attribs>
+   </obj>
+   <obj type="midi/in/cc hr i" uuid="72d8018c0f072c469fcd902b0423ba8fd5e6433" name="cc_7" x="476" y="700">
+      <params/>
+      <attribs>
+         <spinner attributeName="cc" value="15"/>
+         <spinner attributeName="default" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="math/&lt;&lt;" uuid="b03d8d8009c0480be0ccb29ed65933a82fa4a80f" name="&lt;&lt;_3" x="560" y="700">
+      <params/>
+      <attribs>
+         <spinner attributeName="shift" value="0"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc" uuid="7ca9b2c1b4339022c491a8afd70353c17d765584" name="cc_8" x="644" y="700">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="15"/>
+      </attribs>
+   </obj>
+   <obj type="midi/out/cc thin" uuid="5255b30d60e50223ed41179d8ce935ba9464de75" name="cc_36" x="1386" y="700">
+      <params/>
+      <attribs>
+         <combo attributeName="device" selection="usb device port 1"/>
+         <spinner attributeName="channel" value="16"/>
+         <spinner attributeName="cc" value="19"/>
+      </attribs>
+   </obj>
+   <nets>
+      <net>
+         <source obj="cc_2" outlet="midiCC"/>
+         <dest obj="&lt;&lt;_4" inlet="a"/>
+      </net>
+      <net>
+         <source obj="cc_2" outlet="trig"/>
+         <dest obj="cc_4" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="cc_1" outlet="midiCC"/>
+         <dest obj="&lt;&lt;_1" inlet="a"/>
+      </net>
+      <net>
+         <source obj="cc_1" outlet="trig"/>
+         <dest obj="cc_3" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="cc_5" outlet="midiCC"/>
+         <dest obj="&lt;&lt;_2" inlet="a"/>
+      </net>
+      <net>
+         <source obj="cc_5" outlet="trig"/>
+         <dest obj="cc_6" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_1" outlet="result"/>
+         <dest obj="cc_3" inlet="v"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_2" outlet="result"/>
+         <dest obj="cc_6" inlet="v"/>
+      </net>
+      <net>
+         <source obj="cc_7" outlet="midiCC"/>
+         <dest obj="&lt;&lt;_3" inlet="a"/>
+      </net>
+      <net>
+         <source obj="cc_7" outlet="trig"/>
+         <dest obj="cc_8" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_3" outlet="result"/>
+         <dest obj="cc_8" inlet="v"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_4" outlet="result"/>
+         <dest obj="cc_4" inlet="v"/>
+      </net>
+      <net>
+         <source obj="cc_15" outlet="midiCC"/>
+         <dest obj="&lt;&lt;_6" inlet="a"/>
+      </net>
+      <net>
+         <source obj="cc_15" outlet="trig"/>
+         <dest obj="cc_16" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="cc_13" outlet="midiCC"/>
+         <dest obj="&lt;&lt;_5" inlet="a"/>
+      </net>
+      <net>
+         <source obj="cc_13" outlet="trig"/>
+         <dest obj="cc_14" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="cc_17" outlet="midiCC"/>
+         <dest obj="&lt;&lt;_7" inlet="a"/>
+      </net>
+      <net>
+         <source obj="cc_17" outlet="trig"/>
+         <dest obj="cc_18" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_5" outlet="result"/>
+         <dest obj="cc_14" inlet="v"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_7" outlet="result"/>
+         <dest obj="cc_18" inlet="v"/>
+      </net>
+      <net>
+         <source obj="cc_19" outlet="midiCC"/>
+         <dest obj="&lt;&lt;_8" inlet="a"/>
+      </net>
+      <net>
+         <source obj="cc_19" outlet="trig"/>
+         <dest obj="cc_20" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_8" outlet="result"/>
+         <dest obj="cc_20" inlet="v"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_6" outlet="result"/>
+         <dest obj="cc_16" inlet="v"/>
+      </net>
+      <net>
+         <source obj="cc_11" outlet="midiCC"/>
+         <dest obj="&lt;&lt;_14" inlet="a"/>
+      </net>
+      <net>
+         <source obj="cc_11" outlet="trig"/>
+         <dest obj="cc_12" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="cc_9" outlet="midiCC"/>
+         <dest obj="&lt;&lt;_13" inlet="a"/>
+      </net>
+      <net>
+         <source obj="cc_9" outlet="trig"/>
+         <dest obj="cc_10" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="cc_29" outlet="midiCC"/>
+         <dest obj="&lt;&lt;_15" inlet="a"/>
+      </net>
+      <net>
+         <source obj="cc_29" outlet="trig"/>
+         <dest obj="cc_30" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_13" outlet="result"/>
+         <dest obj="cc_10" inlet="v"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_15" outlet="result"/>
+         <dest obj="cc_30" inlet="v"/>
+      </net>
+      <net>
+         <source obj="cc_31" outlet="midiCC"/>
+         <dest obj="&lt;&lt;_16" inlet="a"/>
+      </net>
+      <net>
+         <source obj="cc_31" outlet="trig"/>
+         <dest obj="cc_32" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_16" outlet="result"/>
+         <dest obj="cc_32" inlet="v"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_14" outlet="result"/>
+         <dest obj="cc_12" inlet="v"/>
+      </net>
+      <net>
+         <source obj="cc_23" outlet="midiCC"/>
+         <dest obj="&lt;&lt;_10" inlet="a"/>
+      </net>
+      <net>
+         <source obj="cc_23" outlet="trig"/>
+         <dest obj="cc_24" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="cc_21" outlet="midiCC"/>
+         <dest obj="&lt;&lt;_9" inlet="a"/>
+      </net>
+      <net>
+         <source obj="cc_21" outlet="trig"/>
+         <dest obj="cc_22" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="cc_25" outlet="midiCC"/>
+         <dest obj="&lt;&lt;_11" inlet="a"/>
+      </net>
+      <net>
+         <source obj="cc_25" outlet="trig"/>
+         <dest obj="cc_26" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_9" outlet="result"/>
+         <dest obj="cc_22" inlet="v"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_11" outlet="result"/>
+         <dest obj="cc_26" inlet="v"/>
+      </net>
+      <net>
+         <source obj="cc_27" outlet="midiCC"/>
+         <dest obj="&lt;&lt;_12" inlet="a"/>
+      </net>
+      <net>
+         <source obj="cc_27" outlet="trig"/>
+         <dest obj="cc_28" inlet="trig"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_12" outlet="result"/>
+         <dest obj="cc_28" inlet="v"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_10" outlet="result"/>
+         <dest obj="cc_24" inlet="v"/>
+      </net>
+      <net>
+         <source obj="in_1" outlet="left"/>
+         <dest obj="env_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="env_1" outlet="amp"/>
+         <dest obj="chart_1" inlet="in"/>
+         <dest obj="&lt;&lt;_17" inlet="a"/>
+      </net>
+      <net>
+         <source obj="&gt;c_1" outlet="out"/>
+         <dest obj="boolms_1" inlet="trig"/>
+         <dest obj="change_1" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_17" outlet="result"/>
+         <dest obj="chart_2" inlet="in"/>
+         <dest obj="&gt;c_1" inlet="in"/>
+         <dest obj="cc_34" inlet="v"/>
+      </net>
+      <net>
+         <source obj="change_1" outlet="trig"/>
+         <dest obj="cc_35" inlet="v"/>
+      </net>
+      <net>
+         <source obj="env_2" outlet="amp"/>
+         <dest obj="chart_3" inlet="in"/>
+         <dest obj="&lt;&lt;_18" inlet="a"/>
+      </net>
+      <net>
+         <source obj="&gt;c_2" outlet="out"/>
+         <dest obj="boolms_2" inlet="trig"/>
+         <dest obj="change_2" inlet="in"/>
+      </net>
+      <net>
+         <source obj="&lt;&lt;_18" outlet="result"/>
+         <dest obj="chart_4" inlet="in"/>
+         <dest obj="&gt;c_2" inlet="in"/>
+         <dest obj="cc_36" inlet="v"/>
+      </net>
+      <net>
+         <source obj="change_2" outlet="trig"/>
+         <dest obj="cc_37" inlet="v"/>
+      </net>
+      <net>
+         <source obj="in_1" outlet="right"/>
+         <dest obj="env_2" inlet="in"/>
+      </net>
+   </nets>
+   <settings>
+      <subpatchmode>no</subpatchmode>
+      <MidiChannel>1</MidiChannel>
+      <NPresets>8</NPresets>
+      <NPresetEntries>32</NPresetEntries>
+      <NModulationSources>8</NModulationSources>
+      <NModulationTargetsPerSource>8</NModulationTargetsPerSource>
+      <Author></Author>
+   </settings>
+   <notes><![CDATA[]]></notes>
+   <windowPos>
+      <x>37</x>
+      <y>96</y>
+      <width>1606</width>
+      <height>1000</height>
+   </windowPos>
+</patch-1.0>
