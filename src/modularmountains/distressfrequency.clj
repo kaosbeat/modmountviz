@@ -18,13 +18,40 @@
                  :r 255
                  :g 255
                  :b 255
-                 :alpha 120}) )
+                 :alpha 120
+                 }) )
 ;(def font modularmountains.core/debugfont)
 (def xlist (atom []))
 (def ylist (atom []))
 (def zlist (atom []))
 
 (swap! data assoc :depth 12)
+
+(defn pushrandomdata [data seed]
+  (q/random-seed seed)
+  (let [dim  (/ (@c/opz1 :c1) 8) ]
+    (swap! data conj {
+                      :size (* 10 (q/random 100))
+                 :rot (q/random 1000)
+                 :glitch 10
+                 :noise 10
+                 :xsize 40
+                 :ysize 3
+                 :zsize 3
+                 :depth (* (q/random 10) (@c/opz2 :c2))
+                 :seed 100
+                 :strokeweight 10
+                 :r 255
+                 :g 255
+                 :b 25
+                 :alpha 120
+                 }  ))
+
+  )
+
+
+
+
 
 (defn datadebug [x y ts data]
   ;(q/text-font font)
@@ -45,6 +72,8 @@
   )
 
 (defn draw []
+
+    (pushrandomdata data (@c/channelseeds :freq))
   ( let [c1    (q/map-range  (get @c/cc :c1) 0 127 0 16 )
        c2    (q/map-range  (get @c/cc :c2) 0 127 0 1 )
        c3    (q/map-range  (get @c/cc :c3) 0 127 0.99 0.1)
@@ -59,7 +88,7 @@
        c12   (q/map-range  (get @c/cc :c12) 0 127 0 16 )
        c13   (q/map-range  (get @c/cc :c13) 0 127 0 16 )
        c14   (q/map-range  (get @c/cc :c14) 0 127 0 16 )
-       c15   (q/map-range  (get @c/cc :c15) 0 127 0 16 )
+
        c16   (q/map-range  (get @c/cc :c16) 0 127 0 16 )
 
        env-l (q/map-range (@c/audio-l :env) 0 127 0 1)
@@ -90,31 +119,7 @@
 
 
 
-   (if (= b2a 1)
-     (swap! data assoc :depth (* 200 (* k2 c2)))
-     (swap! data assoc :depth (* 200 k2)))
 
-   (if (= b3a 1)
-
-     (swap! data assoc :rot (mm/piradfast)))
-
-   (if (= b4a 1)
-      (if  (< 12 c10)
-        (swap! data assoc :rot (do  (mm/multirad (- 127 c10)) (mm/pirad)))))
-
-   (if (< 5 c1)
-     (swap! data assoc :seed (rand-int 100)))
-
-   (if (= b1a 1)
-     (if (< 5 c5)
-       (swap! data assoc :strokeweight (+ 1 (rand-int 40))))
-     (swap! data assoc :strokeweight k1))
-
- (swap! data assoc :alpha s1)
-   (if (< 0 c7)
-     (swap! data assoc :r c7))
-   (if (< 0 c8)
-     (swap! data assoc :b c8))
 
    (reset! xlist [0])
    (reset! ylist [0])
@@ -145,7 +150,7 @@
          xsize        (get @data :xsize)
          ysize        (get @data :ysize)
          zsize        (get @data :zsize)
-         size         900
+         size         (get @data :size)
          mmsize       (mm/hundredsteps)
          sqtresh      0.1
          dx           0

@@ -13,8 +13,26 @@
                  :strokeweight 10
                  :xsize 15 :ysize 15 :zsize 15
                  :cubesize 50
-                 :interval 100}) )
-;(def font modularmountains.core/debugfont)
+                 :interval 10
+                 :seed 23}) )
+                                        ;(def font modularmountains.core/debugfont)
+
+
+(defn pushrandomdata [data seed]
+  (q/random-seed seed)
+  (let [dim  (/ (@c/opz1 :c1) 8) ]
+    (swap! data conj {
+                      :size (q/random 1 (* (@c/opz9 :c1) 200))
+                      :rot (q/random 0 3.14)
+                      :rotseed (q/random  10)
+                      :glitch 1
+                      :alpha 120
+                      :strokeweight (* 0 (q/random 1 (* (@c/opz9 :c17) 0)))
+                      :xsize 13 :ysize 10 :zsize 3
+                      :cubesize (q/random 100 (*  (@c/opz1 :c3) 20))
+                      :interval 40} ))
+
+  )
 
 (defn datadebug [x y ts data]
                                         ;(q/text-font font)
@@ -42,87 +60,21 @@
 (defn draw []
 
                                         ;update stuff
-  (let[c1    (q/map-range  (get @c/cc :c1) 0 127 0 16 )
-       c2    (q/map-range  (get @c/cc :c2) 0 127 0 16 )
-       c3    (q/map-range  (get @c/cc :c3) 0 127 0.99 0.1)
-       c4    (q/map-range  (get @c/cc :c4) 0 127 0 127 )
-       c5    (q/map-range  (get @c/cc :c5) 0 127 0 16 )
-       c6    (q/map-range  (get @c/cc :c6) 0 127 0 16 )
-       c7    (q/map-range  (get @c/cc :c7) 0 127 0 16 )
-       c8    (q/map-range  (get @c/cc :c8) 0 127 0 16 )
-       c9    (q/map-range  (get @c/cc :c9) 0 127 0 16 )
-       c10   (q/map-range  (get @c/cc :c10) 0 127 0 16 )
-       c11   (q/map-range  (get @c/cc :c11) 0 127 0 16 )
-       c12   (q/map-range  (get @c/cc :c12) 0 127 0 16 )
-       c13   (q/map-range  (get @c/cc :c13) 0 127 0 16 )
-       c14   (q/map-range  (get @c/cc :c14) 0 127 0 16 )
-       c15   (q/map-range  (get @c/cc :c15) 0 127 0 16 )
-       c16   (q/map-range  (get @c/cc :c16) 0 127 0 16 )
 
-       env-l (q/map-range (@c/audio-l :env) 0 127 0 1)
-       env-r (q/map-range (@c/audio-r :env) 0 127 0 1)
-
-
-       s1    (q/map-range (@c/nano :s1) 0 127 10 120)
-       k1    (q/map-range (@c/nano :k1) 0 127 0 16)
-       b1a   (@c/nano :b1a)
-       b1b   (@c/nano :b1b)
-
-       s2    (q/map-range (@c/nano :s2) 0 127 1 15)
-       k2    (q/map-range (@c/nano :k2) 0 127 0 250)  ;detail
-       b2a   (@c/nano :b2a)
-       b2b   (@c/nano :b2b)
-
-       s3    (q/map-range (@c/nano :s3) 0 127 1 250)
-       k3    (q/map-range (@c/nano :k3) 0 127 0 2500) ;spacingB
-       b3a   (@c/nano :b3a)
-       b3b   (@c/nano :b3b)
-
-       s4    (q/map-range (@c/nano :s4) 0 127 1 50)
-       k4    (q/map-range (@c/nano :k4) 0 127 0.1 50)
-       b4a   (@c/nano :b4a)
-       b4b   (@c/nano :b4b)
-       ]
-
-    (if (= 1 b1a)
-      (swap! data assoc :strokeweight (* c1 k1))
-      (swap! data assoc :strokeweight  k1)
-      )
-    (if (= 1 b2a)
-      (if (< 12 c2)
-        (swap! data assoc :glitch (rand-int 100))))
-
-    (if (= b3a 1)
-      (swap! data assoc :cubesize (* s3  (* env-l 10)))
-      (swap! data assoc :cubesize (* 10 s3)))
-
-    (if (= b4a 1)
-      (if  (< 5 c4)
-        (swap! data assoc :rot (do (mm/multirad c4) (mm/pirad)))))
-
-    (if (= b4b 127)
-      (swap! data assoc :rotseed c5)
-      )
-
-    (swap! data assoc :alpha s1)
-    (swap! data assoc :xsize s2)
-
-    (swap! data assoc :interval k3)
-
-    )
                                         ;  (println (:size data))
- ; (q/background 20)
+  (pushrandomdata data (@c/channelseeds :elf))
+;  (swap! data assoc :rot (do (mm/multirad (@c/opz1 :c4)) (mm/pirad)))
   (q/stroke 255)
-  (q/fill 55 180 128 (@data :alpha))
+  (q/fill 25 10 128 (@data :alpha))
 ;(println (get @data :glitch))
   (let [strokeweight (@data :strokeweight)
         seed (@data :glitch)
         rot (@data :rot)
-        rotx ()
+        rotx 60
         rotmod 0;(mm/hundredsteps)
         xsize (@data :xsize)
-        ysize (@data :xsize)
-        zsize (@data :xsize)
+        ysize (@data :ysize)
+        zsize (@data :zsize)
         size (@data :size)
         sizeinterval (@data :interval)
         mmsize 5
@@ -148,14 +100,14 @@
          (dotimes [x (+ 0 xsize)]
            (dotimes [y (+ 0 ysize)]
              (dotimes [z (+ 0 zsize)]
-               ( q/with-translation [(* x sizeinterval) (+ 0  (* y sizeinterval )) (+ 0 (* z sizeinterval))]
+               ( q/with-translation [(* x sizeinterval) (+ 100  (* y sizeinterval )) (+ 0 (* z sizeinterval))]
                 (if (< (/ (q/random 100 ) 100) sqtresh)
-                  (q/with-rotation [rot 0 0 0]
-                    (q/with-rotation [rotmod 0 0 0])
+                  (q/with-rotation [rot 0  1 0]
 
-                    (q/box (q/random 0 (@data :cubesize))
-                           (q/random 0 (@data :cubesize))
-                           (q/random 0 (@data :cubesize)))
+
+                    (q/box (q/random 0 (@data :cubesize)))
+                   ; (q/random 0 (@data :cubesize))
+                   ; (q/random 0 (@data :cubesize))
 
                     )))
                )))))))

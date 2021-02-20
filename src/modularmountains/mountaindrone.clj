@@ -5,16 +5,16 @@
    [modularmountains.core :as c]))
 
 
-(def data (atom {:size 100
+(def data (atom {:size 1000
                  :rot 0.5
                  :glitch 0
                  :xsize 5
-                 :ysize 5
-                 :zsize 5
-                 :xscale 1
+                 :ysize 50
+                 :zsize 50
+                 :xscale 10
                  :octaves 5
                  :detail 2.1
-                 :spacingA 10
+                 :spacingA 18
                  :spacingB 0.5
                  :spacingC 50
                  :strokeweight 2
@@ -167,7 +167,7 @@
 
 
          s1 (q/map-range (@c/nano :s1) 0 127 10 0.1)
-         k1 (q/map-range (@c/nano :k1) 0 127 0 1)
+         k1 (@c/opz1 :c1)
          b1a (@c/nano :b1a)
          b1b (@c/nano :b1b)
 
