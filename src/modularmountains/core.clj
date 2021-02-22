@@ -18,7 +18,6 @@
 
 
   )
-
 (def server (atom nil))
 
 
@@ -32,6 +31,8 @@
   )
 
 (defn update-state [state]
+  (if (> (@elf/data :ttl) 0)
+    (swap! elf/data update-in [:ttl] - 10 ))
 
   )
 
@@ -56,7 +57,7 @@
 
 (defn draw-state [state]
   (q/background 20)
-  (q/box 100)
+;  (q/box 100)
  ; (datadebug 1750 30 15 osc/ch1)
  ; (datadebug 1750 100 15 osc/ch2)
 ;  (datadebug 1750 180 15 opz1)

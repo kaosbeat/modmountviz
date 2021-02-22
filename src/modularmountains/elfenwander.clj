@@ -5,21 +5,24 @@
    [modularmountains.core :as c]))
 
 
-(def data (atom {:size 200
+(def data (atom {:size 2000
                  :rot 0.5
                  :rotseed 1
                  :glitch 0
                  :alpha 10
-                 :strokeweight 1
-                 :xsize 5 :ysize 5 :zsize 15
+                 :strokeweight 0
+                 :xsize 5 :ysize 5 :zsize 5
                  :cubesize 500
-                 :interval 100
+                 :interval 5
                  :seed 23
-                 :ttl 100}) )
+                 :fillrate 0.1
+                 :ttl 100
+                 :sizeseed 20
+                 :red 12}) )
                                         ;(def font modularmountains.core/debugfont)
 
 
-(defn pushrandomdata [data seed]
+(defn pushrandomdata [seed]
   (q/random-seed seed)
   (let [dim  (/ (@c/opz1 :c1) 8) ]
     (swap! data conj {
@@ -30,7 +33,7 @@
                       :alpha 120
                       :strokeweight (* 0.1 (q/random 10 (* (@c/opz1 :c1) 1)))
                       :xsize 13 :ysize 10 :zsize 3
-                      :cubesize (q/random 100 (*  (@c/opz1 :c3) 20))
+                      :cubesize (q/random 100 (*  (@c/opz1 :c3) 2))
                       :interval 400
                       } ))
  ;(println @data)
@@ -76,16 +79,16 @@
 ;(println (get @data :glitch))
   (let [strokeweight (@data :strokeweight)
         seed (@data :glitch)
-        rot (@data :rot)
-        rotx 60
+        rot (* (@c/opz1 :c4) (mm/pirad))
+        rotx 600
         rotmod 0;(mm/hundredsteps)
         xsize (@data :xsize)
         ysize (@data :ysize)
         zsize (@data :zsize)
         size (@data :size)
-        sizeinterval (@data :interval)
+        sizeinterval (* (@data :interval) (@c/opz1 :c3))
         mmsize 5
-        sqtresh 1
+        sqtresh (@data :fillrate)
         xoffset (/ (- (q/width)(* xsize sizeinterval))2 )
         yoffset (/ (- (q/height)(* ysize sizeinterval))2 )
         zoffset (- (/ (- 0 (* zsize sizeinterval))2 ) 500)
@@ -109,18 +112,26 @@
              (dotimes [z (+ 0 zsize)]
                ( q/with-translation [(* x sizeinterval) (+ 100  (* y sizeinterval )) (+ 0 (* z sizeinterval))]
                 (if (< (/ (q/random 100 ) 100) sqtresh)
-                  (q/with-rotation [rot 0  1 0]
-                    (q/fill 234)
-
-                    (q/box (q/random 0 (@data :cubesize)))
-                   ; (q/random 0 (@data :cubesize))
-                   ; (q/random 0 (@data :cubesize))
+                  (q/with-rotation [(mm/piradfast) 0 0  0]
+                                        ;(q/fill 234  15)
+                                        ;(q/stroke 120 125 0 (* 4 (@data :tll)))
+                    (q/stroke-weight (/ (@data :ttl) 10 ))
+                    (q/stroke 125 255 0)
+                    (q/fill (@data :red) 125 0 (@data :ttl))
+                    (q/random-seed (@data :sizeseed))
+                    (q/box (q/random 0 (@data :cubesize))
+                           (q/random 0 (* 2 (@data :cubesize)))
+                           (q/random 0 (@data :cubesize)))
 
                     )))
                )))))))
 
 
 
-  (datadebug  1400 50 20 data)
+  (datadebug  1680 50 20 data)
+
+
+
+
 
   )

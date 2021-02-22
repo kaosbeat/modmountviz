@@ -5,7 +5,8 @@
             [modularmountains.mountaindrone :as drone]
             [modularmountains.distressfrequency :as freq]
             [modularmountains.theedgeofwhatisadministrativelypossible :as edge]
-            )
+
+            [quil.core :as q])
   )
 
 
@@ -43,18 +44,36 @@
                       (println note)
                       (swap! c/channelseeds assoc :edge note ))
                   10 (do
-                      (swap! c/channelseeds assoc :freq note )
+
                       )
                   0 (do
-                      (swap! c/channelseeds assoc :elf note )
-                      (swap! elf/data assoc :glitch (rand-int 20))
+                     ; (swap! c/channelseeds assoc :elf note )
+                      (swap! elf/data assoc :glitch note)
+;                      (elf/pushrandomdata elf/data note)
+                      (swap! elf/data assoc :ttl 120)
 
                       )
+
                   1 (do
-
-                      (swap! elf/data assoc :cubesize (rand-int 500))
+                      (if (< (@elf/data :red) 128)
+                        (swap! elf/data assoc :red 255 )
+                        (swap! elf/data assoc :red 0 ))
 
                       )
+
+                  3 (do
+                      (swap! elf/data  assoc :fillrate (/  (+ 1 (rand-int 10)) 20 ))
+                      )
+                  4 (do
+                                        ;   (swap! c/channelseeds assoc :freq note )
+                      (swap! freq/data assoc :strokeweight (rand-int 100))
+                      (swap! freq/data assoc :seed note)
+
+                      )
+                  6 (do
+                      (if (> (@elf/data :sizeseed) 0)
+                        (swap! elf/data update-in [:sizeseed] dec )
+                        (swap! elf/data assoc :sizeseed 20)))
                  (+ 1 1)
 ;                 (println "unchannelled midi")
                   )
