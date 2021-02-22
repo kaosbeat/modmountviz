@@ -2,14 +2,16 @@
 
   (:require [quil.core :as q]
             [quil.middleware :as m]
-            [modularmountains.osc :as osc]
-            [modularmountains.midi]
+            ; [modularmountains.osc :as osc]
+            [modularmountains.data]
+
             [modularmountains.modulators :as mm]
             [modularmountains.elfenwander :as elf]
-            [modularmountains.mountaindrone :as drone]
+
+             [modularmountains.mountaindrone :as drone]
             [modularmountains.distressfrequency :as freq]
             [modularmountains.theedgeofwhatisadministrativelypossible :as edge]
-
+            [modularmountains.midi :as midi]
             )
   (:import ('codeanticode.syphon.SyphonServer))
   (:import ('jsyphon.JSyphonServer))
@@ -47,20 +49,24 @@
     )
   )
 
+
+
+
+
+
 (defn draw-state [state]
   (q/background 20)
-  ;(q/box 100)
+  (q/box 100)
  ; (datadebug 1750 30 15 osc/ch1)
  ; (datadebug 1750 100 15 osc/ch2)
-  (datadebug 1750 180 15 opz9 )
+;  (datadebug 1750 180 15 opz1)
 ; (datadebug 1750 500 15 audio-l)
 ; (datadebug 1750 550 15 audio-r)
 (elf/draw)
-  (
-   freq/draw
-   )(drone/draw)
+ ; (freq/draw)
+ ; (drone/draw)
   ;;
- (edge/draw)
+;(edge/draw)
                                         ;
   (.sendScreen @server )
 

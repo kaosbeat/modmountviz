@@ -10,11 +10,12 @@
                  :rotseed 1
                  :glitch 0
                  :alpha 10
-                 :strokeweight 10
-                 :xsize 15 :ysize 15 :zsize 15
-                 :cubesize 50
-                 :interval 10
-                 :seed 23}) )
+                 :strokeweight 1
+                 :xsize 5 :ysize 5 :zsize 15
+                 :cubesize 500
+                 :interval 100
+                 :seed 23
+                 :ttl 100}) )
                                         ;(def font modularmountains.core/debugfont)
 
 
@@ -22,15 +23,17 @@
   (q/random-seed seed)
   (let [dim  (/ (@c/opz1 :c1) 8) ]
     (swap! data conj {
-                      :size (q/random 1 (* (@c/opz9 :c1) 200))
+                      :size (q/random 1 (* (@c/opz1 :c1) 200))
                       :rot (q/random 0 3.14)
                       :rotseed (q/random  10)
                       :glitch 1
                       :alpha 120
-                      :strokeweight (* 0 (q/random 1 (* (@c/opz9 :c17) 0)))
+                      :strokeweight (* 0.1 (q/random 10 (* (@c/opz1 :c1) 1)))
                       :xsize 13 :ysize 10 :zsize 3
                       :cubesize (q/random 100 (*  (@c/opz1 :c3) 20))
-                      :interval 40} ))
+                      :interval 400
+                      } ))
+ ;(println @data)
 
   )
 
@@ -57,12 +60,16 @@
 
   )
 
+
+
 (defn draw []
 
                                         ;update stuff
+ ;(swap! data update-in [:ttl] dec)
+ ;(println (@data :ttl))
 
                                         ;  (println (:size data))
-  (pushrandomdata data (@c/channelseeds :elf))
+  ;(pushrandomdata data (@c/channelseeds :elf))
 ;  (swap! data assoc :rot (do (mm/multirad (@c/opz1 :c4)) (mm/pirad)))
   (q/stroke 255)
   (q/fill 25 10 128 (@data :alpha))
@@ -103,7 +110,7 @@
                ( q/with-translation [(* x sizeinterval) (+ 100  (* y sizeinterval )) (+ 0 (* z sizeinterval))]
                 (if (< (/ (q/random 100 ) 100) sqtresh)
                   (q/with-rotation [rot 0  1 0]
-
+                    (q/fill 234)
 
                     (q/box (q/random 0 (@data :cubesize)))
                    ; (q/random 0 (@data :cubesize))

@@ -13,6 +13,8 @@
                  :zsize 50
                  :xscale 10
                  :octaves 5
+                 :xparts 5
+                 :yparts 20
                  :detail 2.1
                  :spacingA 18
                  :spacingB 0.5
@@ -145,97 +147,42 @@
 
 
 (defn draw []
-  ( let [c1 (q/map-range  (get @c/cc :c1) 0 127 0 16 )
-         c2 (q/map-range  (get @c/cc :c2) 0 127 0 16 )
-         c3 (q/map-range  (get @c/cc :c3) 0 127 0.99 0.1)
-         c4 (q/map-range  (get @c/cc :c4) 0 127 0.5 16 )
-         c5 (q/map-range  (get @c/cc :c5) 0 127 0 16 )
-         c6 (q/map-range  (get @c/cc :c6) 0 127 0 16 )
-         c7 (q/map-range  (get @c/cc :c7) 0 127 0 16 )
-         c8 (q/map-range  (get @c/cc :c8) 0 127 0 16 )
-         c9 (q/map-range  (get @c/cc :c9) 0 127 0 16 )
-         c10 (q/map-range  (get @c/cc :c10) 0 127 0 16 )
-         c11 (q/map-range  (get @c/cc :c11) 0 127 0 16 )
-         c12 (q/map-range  (get @c/cc :c12) 0 127 0 16 )
-         c13 (q/map-range  (get @c/cc :c13) 0 127 0 16 )
-         c14 (q/map-range  (get @c/cc :c14) 0 127 0 16 )
-         c15 (q/map-range  (get @c/cc :c15) 0 127 0 16 )
-         c16 (q/map-range  (get @c/cc :c16) 0 127 0 16 )
-
-         env-l (q/map-range (@c/audio-l :env) 0 127 0 1)
-         env-r (q/map-range (@c/audio-r :env) 0 127 0 1)
 
 
-         s1 (q/map-range (@c/nano :s1) 0 127 10 0.1)
-         k1 (@c/opz1 :c1)
-         b1a (@c/nano :b1a)
-         b1b (@c/nano :b1b)
-
-         s2 (q/map-range (@c/nano :s2) 0 127 1 15)
-         k2 (q/map-range (@c/nano :k2) 0 127 0.1 0.99)  ;detail
-         b2a (@c/nano :b2a)
-         b2b (@c/nano :b2b)
-
-         s3 (q/map-range (@c/nano :s3) 0 127 1 50)
-         k3 (q/map-range (@c/nano :k3) 0 127 0.99 0.01) ;spacingB
-         b3a (@c/nano :b3a)
-         b3b (@c/nano :b3b)
-
-         s4 (q/map-range (@c/nano :s4) 0 127 1 50)
-         k4 (q/map-range (@c/nano :k4) 0 127 0.1 50)
-         b4a (@c/nano :b4a)
-         b4b (@c/nano :b4b)
 
 
-         xparts 30
-         yparts 50
-         octaves (q/map-range (@c/nano :k8) 0 127 1 16)
+  ;octaves (q/map-range (@c/opz1 :c1) 0 127 1 16)
 
 
-         ]
+
 
 ;;; data mapper
-   (if (= 1 b1a)
-     (swap! data assoc :octaves (* 16 (* k1 env-l)))
-     (swap! data assoc :octaves (* k1 16))
-     )
-   (if (= 1 b2a)
-     (swap! data assoc :detail (* 15 (* k2 env-r)))
-     (swap! data assoc :detail (* k2 5))
-     )
-   (if (= 1 b3a)
-     (swap! data assoc :spacingB (* k3 c3))
-     (swap! data assoc :spacingB (* k3 1))
-     )
-   (if (> c1 2)
-     (swap! data assoc :seed (rand-int 100)))
 
-   (if (= 1 b4a)
-     (swap! data assoc :strokeweight c4)
-     (swap! data assoc :strokeweight k4))
 
- ;  (swap! data assoc :spacingB k3)
-   (swap! data assoc :xscale s1)
+
+
 ;   (swap! data assoc :strokeweight s3)
 
    ;(swap! data assoc :spacingB k3)
 
 
    ;; prepare for draw
-   (reset! inputdata [])
-   (reset! modulationdata [])
-   (q/random-seed (@data :seed))
-   (modulatedata inputdata k1 (@data :octaves) (@data :detail) yparts 10 (q/random 1 100) 1)
-   (modulatedata modulationdata k1 (@data :octaves) (@data :detail) xparts 10 (q/random 1 250) 1)
+
+  (reset! inputdata [])
+  (reset! modulationdata [])
+  (q/random-seed (@data :seed))
+  (modulatedata inputdata 16 (@data :octaves) (@data :detail) (@data :yparts) 10 (q/random 1 100) 1)
+  (modulatedata modulationdata 16 (@data :octaves) (@data :detail) (@data :xparts) 10 (q/random 1 250) 1)
                                         ;(println inputdata)
                                         ;  (println (:size data))
                                         ; (q/background 20)
 
-   (q/stroke 255 340 0 255)
-   (q/fill 255 255 25 20 )
+
+  (q/stroke 255 340 0 255)
+  (q/fill 255 255 25 20 )
 
                                         ;(println (get @data :glitch))
-   )
+
 
 
 

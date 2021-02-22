@@ -96,9 +96,8 @@
   (q/with-translation [(/  (q/width) 2) (/ (q/height) 2) 0 ]
     (q/with-rotation [(@data :rot) 0 1 1]
       (q/with-translation [0 0 -500]
-                                        ;(q/box 100)
+             (q/box 100)
                                         ;(arcSeq 1 20 0.5 0.9 0.2 0 1000 1000)
-
 
         (let [baseradius   80
               interradius  10
@@ -114,13 +113,18 @@
 
           (dotimes [n amount]
                                         ;            (q/random-seed n)
-            (q/with-rotation [(q/random 0 6.28) 0 0 0]
-              (arcSeq (+ seed  n) (+ steps n)  0.2  fillrate (- (/ centeroffset  2)(q/random centeroffset) ) (- (/ centeroffset  2)(q/random centeroffset) )  (+ baseradius (* n interradius))  (+ baseradius (* n interradius))  )
+            ;( q/with-rotation [(q/random 0 6.28) 0 0 0])
+                                        ;
+
+
+
+            ;(arcSeq (+ seed  n) (+ steps n)  0.2  fillrate (- (/ centeroffset  2)(q/random centeroffset) ) (- (/ centeroffset  2)(q/random centeroffset) )  (+ baseradius (* n interradius))  (+ baseradius (* n interradius))  )
 
                                         ;
-              (q/stroke 25 (q/random 255) 25 (@data :alpha))
-              (arcSeq (+ seed  n) (+ steps n)  0.2  fillrate (- (/ centeroffset  2)(q/random centeroffset) ) (- (/ centeroffset  2)(q/random centeroffset) ) (* (@data :ellipsoid) (+ baseradius (* n interradius)))  (* 3 (+ baseradius (* n interradius))))
-              )
+              ;(q/stroke 25 (q/random 255) 25 (@data :alpha))
+
+             ; (arcSeq (+ seed  n) (+ steps n)  0.2  fillrate (- (/ centeroffset  2)(q/random centeroffset) ) (- (/ centeroffset  2)(q/random centeroffset) ) (* (@data :ellipsoid) (+ baseradius (* n interradius)))  (* 3 (+ baseradius (* n interradius))))
+
             ))
         )))
   (datadebug  1400 50 20 data)
