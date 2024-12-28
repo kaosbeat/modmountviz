@@ -11,18 +11,16 @@
             [modularmountains.theedgeofwhatisadministrativelypossible :as edge]
 
             )
-  (:import ( 'codeanticode.syphon.SyphonServer))
-  (:import ('jsyphon.JSyphonServer))
+;  (:import ( 'codeanticode.syphon.SyphonServer))
+;  (:import ('jsyphon.JSyphonServer))
+)
 
-
-  )
-
-(def server (atom nil))
+;(def server (atom nil))
 
 (defn setup []
   ; Set frame rate to 30 frames per second.
   (q/frame-rate 30)
-  (reset! server (codeanticode.syphon.SyphonServer. (quil.applet/current-applet) "ModularMountains"))
+ ; (reset! server (codeanticode.syphon.SyphonServer. (quil.applet/current-applet) "ModularMountains"))
   ; Set color mode to HSB (HSV) instead of default RGB.
   (defonce debugfont (q/load-font (.getPath (clojure.java.io/resource "AndaleMono-48.vlw"))))
  (let [font debugfont] (q/text-font font) (q/text "fontsetup" 20 100))
@@ -60,7 +58,7 @@
   ;;
  ;(edge/draw)
                                         ;
-  (.sendScreen @server )
+ ; (.sendScreen @server )
 
   )
 
